@@ -2,7 +2,7 @@ import discord #pycord
 import os
 from dotenv import load_dotenv
 
-
+TOKEN = os.environ['TOKEN']
 load_dotenv()
 intents = discord.Intents.all()
 bot = discord.Bot(intents=intents)
@@ -47,4 +47,4 @@ async def thread(ctx, auto_archive_duration=10080):
 	await thread.send("<@&1077985851562278922>", view=Button(thread))
 
 
-bot.run(os.getenv('TOKEN'))
+bot.run(TOKEN)
